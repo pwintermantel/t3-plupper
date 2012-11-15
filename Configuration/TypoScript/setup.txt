@@ -1,0 +1,34 @@
+plugin.tx_plupper {
+	view {
+		templateRootPath = {$plugin.tx_plupper.view.templateRootPath}
+		partialRootPath = {$plugin.tx_plupper.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_plupper.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_plupper.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_plupper._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-plupper table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-plupper table th {
+		font-weight:bold;
+	}
+
+	.tx-plupper table td {
+		vertical-align:top;
+	}
+)
