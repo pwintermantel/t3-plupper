@@ -7,8 +7,11 @@ plugin.tx_plupper {
 		# cat=plugin.tx_plupper/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:plupper/Resources/Private/Layouts/
 	}
-	persistence {
-		# cat=plugin.tx_plupper//a; type=string; label=Default storage PID
-		storagePid = 
-	}
+
+  settings {
+		# cat=plugin.tx_plupper/settings; type=string; label= Plupper API URL
+    apiUrl = https://api.plupper.com
+		# cat=plugin.tx_plupper/settings; type=string; label= Your Plupper Account ID
+    accountId = you@plupper.com
+  }
 }
