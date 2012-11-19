@@ -1,0 +1,6 @@
+plugin.tx_plupper {
+  settings {
+		# cat=plugin.tx_plupper/file; type=string; label= The script for the button behaviour
+    scriptUrl = typo3conf/ext/plupper/Resources/Public/JavaScript/script.js
+  }
+}

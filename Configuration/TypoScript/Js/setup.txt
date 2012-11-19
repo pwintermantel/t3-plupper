@@ -1,0 +1,12 @@
+plugin.tx_plupper {
+  settings {
+    scriptUrl = {$plugin.tx_plupper.settings.scriptUrl}
+  }
+}
+
+
+page.includeJSFooter.plupper1 = https://www.google.com/jsapi
+page.includeJSFooter.plupper1.external = 1
+page.includeJSFooter.plupper2 = https://static.plupper.com/js/plupper.js
+page.includeJSFooter.plupper2.external = 1
+page.includeJSFooter.plupper3 = {$plugin.tx_plupper.settings.scriptUrl}

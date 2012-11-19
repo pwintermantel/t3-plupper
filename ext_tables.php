@@ -9,6 +9,7 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 	'Plupper'
 );
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Plupper Status');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Main', 'Plupper Main Config');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Js', 'Plupper JavaScript');
 
 ?>
