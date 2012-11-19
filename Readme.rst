@@ -16,12 +16,16 @@ Installation
 ------------
 
 Install as usual with the EM and add the static Plupper TypoScript
-Config to your TS Template.
+Configs to your TS Template.
+
+To add behavior to the status button you can include the Plupper JS
+template which loads the plupper script and sets up the button or you
+can roll you own JS in your main js.
 
 Configuration
 -------------
 
-There are currently only two configuration values. Set those in the TS
+There are currently only three  configuration values. Set those in the TS
 Constants.
 
 plugin.tx_plupper.settings
@@ -55,4 +59,18 @@ plugin.tx_plupper.settings
 	Default
     you@plupper.com
 
+
+.. container:: table-row
+
+	Property
+    scriptUrl 
+
+	Data type
+    string
+
+	Description
+    script url for JS behavior
+
+	Default
+    typo3conf/ext/plupper/Resources/Public/JavaScript/script.js
 
