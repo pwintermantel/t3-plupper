@@ -7,7 +7,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Plupper',
 	array(
-		'Plupper' => 'status',
+		'Plupper' => 'status, error',
 		
 	),
 	// non-cacheable actions
@@ -17,4 +17,3 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	)
 );
 
-?>

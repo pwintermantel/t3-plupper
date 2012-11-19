@@ -33,8 +33,41 @@
  *
  */
 class Tx_Plupper_Controller_PlupperController extends Tx_Extbase_MVC_Controller_ActionController {
+
   public function statusAction() {
-    $this->view->assign('status', json_decode(file_get_contents('')));
-  
+    try {
+      $url = $this->settings['apiUrl'] . '/resources/provider/' . $this->settings['accountId'] . '/status';
+      $result = $this->makeApiCall($url);
+      $this->view->assign('status', $result);
+    } catch(Exception $e) {
+      $this->redirect('error');
+    }
+  }
+
+  public function errorAction() { }
+
+
+  /**
+   * Handles the communication with the API
+   *
+   * @param string $resource The resource to load from
+   * @returns stdObj
+   * @throws Exception
+   */
+  private function makeApiCall($uri) {
+   	  $ch = curl_init($uri);
+      curl_setopt_array($ch, array(
+          CURLOPT_RETURNTRANSFER => true,
+          //CURLOPT_HEADER         => true,
+          CURLOPT_HTTPHEADER     => array('Content-Type:application/json')
+      ));
+
+      $rawData = curl_exec($ch);
+      $data    = json_decode($rawData);
+
+      if (curl_errno($ch) || !$data) {
+        throw new Exception('Error during API Request:' .  serialize(array(curl_errno($ch), $uri)));
+      }
+      return $data;
   }
 }

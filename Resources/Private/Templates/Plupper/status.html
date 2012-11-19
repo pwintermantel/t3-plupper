@@ -1,4 +1,11 @@
 <div class="well">
 <h2>Beratungs-Chat</h2>
-<a class="btn btn-success btn-large disabled"><i class="icon-comments"></i> Leider ist kein Berater online!</a>
+<f:if condition="{status.online}">
+  <f:then>
+    <a class="btn btn-success btn-large"><i class="icon-comments"></i> Jetzt mit einem Berater chatten!</a>
+  </f:then>
+  <f:else>
+    <a class="btn btn-large disabled"><i class="icon-comments"></i> Leider ist kein Berater online!</a>
+  </f:else>
+</f:if>
 </div>
