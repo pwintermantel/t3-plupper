@@ -38,6 +38,7 @@ class Tx_Plupper_Controller_PlupperController extends Tx_Extbase_MVC_Controller_
     try {
       $url = $this->settings['apiUrl'] . '/resources/provider/' . $this->settings['accountId'] . '/status';
       $result = $this->makeApiCall($url);
+      $this->view->assign('accountId', $this->settings['accountId']);
       $this->view->assign('status', $result);
     } catch(Exception $e) {
       $this->forward('error');
