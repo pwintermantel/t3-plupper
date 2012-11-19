@@ -40,7 +40,8 @@ class Tx_Plupper_Controller_PlupperController extends Tx_Extbase_MVC_Controller_
       $result = $this->makeApiCall($url);
       $this->view->assign('status', $result);
     } catch(Exception $e) {
-      $this->redirect('error');
+      $this->forward('error');
+      return;
     }
   }
 
